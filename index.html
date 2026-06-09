@@ -1364,14 +1364,13 @@
 
   // ── Beta form ──────────────────────────────────────
   document.querySelector('.beta-submit').addEventListener('click', () => {
-    const input = document.querySelector('.beta-input');
-    if (input.value && input.value.includes('@')) {
-      input.value = '';
-      document.querySelector('.beta-submit').textContent = 'Request received ✓';
-      document.querySelector('.beta-submit').style.background = '#2F8F88';
-      document.querySelector('.beta-note').textContent = 'Got it. Greg will follow up directly.';
-    }
-  });
+  const input = document.querySelector('.beta-input');
+  if (input.value && input.value.includes('@')) {
+    window.location.href = 'mailto:greg@sharpen.consulting'
+      + '?subject=Elliott beta request'
+      + '&body=Hi Greg, I\'d like to join the Elliott beta. My email: ' + input.value;
+  }
+});
 </script>
 </body>
 </html>
